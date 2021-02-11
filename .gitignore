@@ -1,3 +1,2 @@
 .vscode
-carhouse
-env
+db.sqlite3
