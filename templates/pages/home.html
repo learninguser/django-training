@@ -139,18 +139,29 @@
                                 <div class="overlap-box">
                                     <div class="overlap-btns-area">
                                         <div class="car-magnify-gallery">
+                                            {% if car.car_photo2 == '' %}
+                                            {% else %}
                                             <a href="{{ car.car_photo1.url }}" class="overlap-btn">
                                                 <i class="fa fa-expand"></i>
                                                 <img class="hidden" src="{{ car.car_photo1.url }}">
                                             </a>
-                                            <a href="{{ car.car_photo2.url }}" class="overlap-btn">
-                                                <i class="fa fa-expand"></i>
-                                                <img class="hidden" src="{{ car.car_photo2.url }}">
-                                            </a>
+                                            {% endif %}
+                                            
+                                            {% if car.car_photo2 == '' %}
+                                            {% else %}
+                                                <a href="{{ car.car_photo2.url }}" class="overlap-btn">
+                                                    <i class="fa fa-expand"></i>
+                                                    <img class="hidden" src="{{ car.car_photo2.url }}">
+                                                </a>
+                                            {% endif %}
+
+                                            {% if car.car_photo3 == '' %}
+                                            {% else %}
                                             <a href="{{ car.car_photo3.url }}" class="overlap-btn">
                                                 <i class="fa fa-expand"></i>
                                                 <img class="hidden" src="{{ car.car_photo3.url }}">
                                             </a>
+                                            {% endif %}
                                         </div>
                                     </div>
                                 </div>
