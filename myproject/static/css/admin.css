@@ -1,0 +1,40 @@
+#header {
+    background-color: white !important;
+    color: #ff0000;
+    box-shadow: 0px 0px 3px 0px #ff0000;
+}
+#header a:link, #header a:visited{
+    color: #000 !important;
+}
+
+div.breadcrumbs{
+    background-color: #000 !important;
+}
+
+.module h2, .module caption, .inline-group h2{
+    background-color: #000 !important;
+}
+
+.button, input[type=submit], input[type=button], .submit-row input, a.button{
+    background-color: #4e5557 !important;
+    color: white !important;
+}
+
+.button:active, input[type=submit]:active, input[type=button]:active, .button:focus, input[type=submit]:focus, input[type=button]:focus, .button:hover, input[type=submit]:hover, input[type=button]:hover {
+    background: #4e5557 !important;
+}
+
+#content-related .module h2 {
+    color: white !important;
+}
+
+#changelist #toolbar form input[type="submit"]:hover{
+    color: #000 !important;
+    background-color: white !important;
+}
+
+#changelist .actions .button:hover{
+    color: #000 !important;
+    background-color: white !important;
+}
+

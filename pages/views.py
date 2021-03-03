@@ -13,7 +13,8 @@ def home(request):
     state_search = Car.objects.values_list('state', flat=True).distinct()
     year_search = Car.objects.values_list('year', flat=True).distinct()
     body_style_search = Car.objects.values_list('body_style', flat=True).distinct()
-    
+    transmission_search = Car.objects.values_list('transmission', flat=True).distinct()
+
     data = {
     'teams': teams,
     'featured_cars': featured_cars,
@@ -23,6 +24,7 @@ def home(request):
     'state_search': state_search,
     'year_search': year_search,
     'body_style_search': body_style_search,
+    'transmission_search': transmission_search,
     }
     return render(request, 'pages/home.html', context=data)
 

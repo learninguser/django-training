@@ -33,6 +33,13 @@ def car_detail(request, id):
 
 def search(request):
     cars = Car.objects.order_by('created_date')
+
+    model_search = Car.objects.values_list('model', flat=True).distinct()
+    state_search = Car.objects.values_list('state', flat=True).distinct()
+    year_search = Car.objects.values_list('year', flat=True).distinct()
+    body_style_search = Car.objects.values_list('body_style', flat=True).distinct()
+    transmission_search = Car.objects.values_list('transmission', flat=True).distinct()
+
     if 'keyword' in request.GET:
         keyword = request.GET['keyword']
         if keyword:
@@ -67,5 +74,10 @@ def search(request):
         
     context = {
         'cars': cars,
+        'model_search': model_search,
+        'state_search': state_search,
+        'year_search': year_search,
+        'body_style_search': body_style_search,
+        'transmission_search': transmission_search,
     }
     return render(request, 'cars/search.html', context=context)
