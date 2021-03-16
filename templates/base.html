@@ -34,6 +34,13 @@
       <link rel="stylesheet" type="text/css" href="{% static 'css/ie10-viewport-bug-workaround.css' %}">
 
       <script src="{% static 'js/ie-emulation-modes-warning.js' %}"></script>
+      <script>
+        window.setTimeout(function() {
+            $(".alert").fadeTo(500, 0).slideUp(500, function(){
+                $(this).remove(); 
+            });
+        }, 2500);
+      </script>
   </head>
   <body>
     {% include 'includes/topbar.html' %}

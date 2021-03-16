@@ -8,7 +8,7 @@
         <div class="breadcrumb-areas">
             <h1>{{ single_car.car_title }}</h1>
             <ul class="breadcrumbs">
-                <li><a href="index.html">Home</a></li>
+                <li><a href="{% url 'home' %}">Home</a></li>
                 <li class="active">{{ single_car.car_title }}</li>
             </ul>
         </div>
@@ -119,11 +119,8 @@
                                     </div>
                                 </div>
                             </div>
-                           
                         </div>
                     </div>
-                        
-                    
                 </div>
             </div>
             <div class="col-lg-4 col-md-12">
@@ -188,7 +185,7 @@
                         <div class="modal-content">
                           <div class="contact-dealer modal-header">
                             <!-- <h5 class="modal-title" id="inquiryModalLabel">Contact Dealer</h5> -->
-                            <img src="img/logos/logo-black-white.png">
+                            <img src="../static/img/logos/logo-black-white.png">
                             <button type="button" class="close" data-dismiss="modal">
                               <span>&times;</span>
                             </button>
