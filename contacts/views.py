@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
 from .models import Contact
 from django.contrib import messages
+from django.core.mail import send_mail
+from django.contrib.auth.models import User
 
 # Create your views here.
 def enquiry(request):
@@ -17,6 +19,12 @@ def enquiry(request):
         message = request.POST['message']
         email = request.POST['email']
 
+        if request.user.is_authenticated:
+            has_contacted = Contact.objects.all().filter(car_id = car_id, user_id = user_id)
+            if has_contacted:
+                messages.error(request, "You have already enquired about this car, we will get back to you shortly")
+                return redirect('/cars/'+car_id)
+
         contact = Contact(
             car_id = car_id,
             car_title = car_title,
@@ -29,6 +37,15 @@ def enquiry(request):
             email = email,
             phone = phone,
             message = message,
+        )
+        admin_info = User.objects.get(is_superuser = True)
+        admin_email = admin_info.email
+        send_mail(
+            'New Car enquiry: ' + car_title,
+            'You have a new enquiry for the car ' + car_title + '. Login for more details',
+            'icspavan@gmail.com',
+            [admin_email],
+            fail_silently=False,
         )
 
         contact.save()
