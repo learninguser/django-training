@@ -43,6 +43,16 @@ INSTALLED_APPS = [
     'accounts.apps.AccountsConfig',
     'contacts.apps.ContactsConfig',
     'ckeditor',
+
+    # Social login
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+
+    ## Providers
+    'allauth.socialaccount.providers.facebook',
+    'allauth.socialaccount.providers.google',
 ]
 
 MIDDLEWARE = [
@@ -142,9 +152,13 @@ MESSAGE_TAGS = {
     messages.ERROR: 'danger',
 }
 
+SITE_ID = 1
+
 # Email Settings
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'icspavan@gmail.com'
-EMAIL_HOST_PASSWORD = 'xupxenrwhmrlntga'
+EMAIL_HOST_PASSWORD = 'heyaifsylxphvyiy'
 EMAIL_USE_TLS = True
+
+LOGIN_REDIRECT_URL = 'dashboard'

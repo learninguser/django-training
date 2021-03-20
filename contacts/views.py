@@ -43,7 +43,7 @@ def enquiry(request):
         send_mail(
             'New Car enquiry: ' + car_title,
             'You have a new enquiry for the car ' + car_title + '. Login for more details',
-            'icspavan@gmail.com',
+            email,
             [admin_email],
             fail_silently=False,
         )
