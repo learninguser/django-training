@@ -11,7 +11,6 @@ __pycache__/*
 local_settings.py
 db.sqlite3
 db.sqlite3-journal
-media
 photos
 migrations
 __pycache__
@@ -156,6 +155,6 @@ dmypy.json
 # profiling data
 .prof
 
+/media/
+
 # End of https://www.toptal.com/developers/gitignore/api/django
-myproject/__pycache__/settings.cpython-37.pyc
-myproject/__pycache__/settings.cpython-37.pyc
