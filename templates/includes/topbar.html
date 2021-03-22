@@ -13,7 +13,7 @@
                 <ul class="top-social-media pull-right">
                     {% if user.is_authenticated %}
                     <li>
-                        <a href="#" class="nav-item">Welcome {{user.first_name}}</a>
+                        <a href="{% url 'dashboard' %}" class="nav-item">Welcome {{user.first_name}}</a>
                     </li>
                     <li>
                         <a href="{% url 'logout' %}" class="sign-in"><i class="fa fa-sign-out"></i> Logout</a>
