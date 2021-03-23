@@ -26,7 +26,7 @@ SECRET_KEY = 'e-xc#!v*a9qild8nazwpl+jk2n_&h+41#1^1la1d3iqi)l1j#h'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = [".herokuapp.com"]
+ALLOWED_HOSTS = ['frozen-taiga-64762.herokuapp.com']
 
 
 # Application definition
